@@ -15,8 +15,10 @@
       <tr>
         <td><%= pin.description %></td>
         <td><%= link_to 'Pokaż', pin, class: "btn btn-primary" %></td>
+        <% if pin.user == current_user %>
         <td><%= link_to 'Edytuj', edit_pin_path(pin), class: "btn btn-success" %></td>
         <td><%= link_to 'Usuń', pin, class: "btn btn-danger", method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
